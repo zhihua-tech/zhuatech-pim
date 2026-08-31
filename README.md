@@ -87,3 +87,7 @@ docker compose up --build
 ## 渠道发布准备度
 
 新增 `POST /api/pim/insights/channel-readiness`，从必填属性、图片、翻译、类目映射和内容审批计算商品完整度，输出 `READY`、`ENRICH` 或 `BLOCKED` 及待补齐清单。
+
+## 企业级黄金商品主档发布
+
+新增 `POST /api/enterprise/pim/product-master-release`，覆盖责任人、去重、类目、监管属性、变体一致性、审批、完整度、本地化和生效窗口，返回 `PUBLISH / REVIEW / BLOCKED`。详见 [黄金商品主档说明](docs/ENTERPRISE_PRODUCT_MASTER.md)。
