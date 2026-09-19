@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ProductMasterReleaseService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         List<String> blockers = new ArrayList<>();
         List<String> actions = new ArrayList<>();
@@ -34,13 +40,22 @@ public class ProductMasterReleaseService {
         return new Assessment(Decision.PUBLISH, true, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String productCode, boolean dataOwnerAssigned,
                           boolean duplicateCheckPassed, boolean taxonomyMapped,
                           boolean regulatedProduct, boolean regulatoryAttributesApproved,
                           boolean variantConsistencyPassed, boolean finalApprovalComplete,
                           @Min(0) @Max(100) int completenessPercent,
                           boolean localizedContentReady, boolean effectiveDateConfirmed) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(Decision decision, boolean publishable, List<String> blockers,
                              List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { PUBLISH, REVIEW, BLOCKED }
 }
