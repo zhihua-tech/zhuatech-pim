@@ -1,5 +1,11 @@
 [简体中文](README.md) | **English**
 
+## 2026-10-23 update: Multi-channel product content completeness
+
+Checks actual product fields, image counts and locale availability against explicit channel requirements and returns concrete missing evidence rather than a supplied completeness score.
+
+After signing in to the real backend, open the bottom-right business calculation tool to submit structured input, inspect calculated results and export complete JSON. The endpoint is `POST /api/workbench/channel-content-matrix` with the existing JWT. Computation is implemented server-side; it does not query another user's records, persist business documents, approve transactions or invoke external models. See [algorithm, sample and test notes](docs/AI_WORKFLOW_UPGRADE_20261023.md).
+
 # ZhuaTech Product Information Management
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for retail, commerce, product, and after-sales operations.
