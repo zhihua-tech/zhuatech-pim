@@ -1,0 +1,89 @@
+{
+  "slug": "pim",
+  "title": "EAN13校验与包装单位毛利",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "barcode",
+      "label": "EAN13商品条码",
+      "type": "TEXT"
+    },
+    {
+      "key": "unitsPerPack",
+      "label": "每包装基础单位数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "1000000"
+    },
+    {
+      "key": "baseUnitCost",
+      "label": "基础单位成本元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "packPrice",
+      "label": "包装售价元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "minimumMargin",
+      "label": "最低毛利率%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    }
+  ],
+  "columns": [
+    {
+      "key": "checksumValid",
+      "label": "条码校验位正确"
+    },
+    {
+      "key": "expectedCheckDigit",
+      "label": "应有校验位"
+    },
+    {
+      "key": "packCost",
+      "label": "包装成本元"
+    },
+    {
+      "key": "packProfit",
+      "label": "包装毛利元"
+    },
+    {
+      "key": "marginPct",
+      "label": "毛利率%"
+    }
+  ],
+  "description": "对13位商品条码计算校验位，并按每包装含基础单位数核算包装成本毛利，避免包装价与基础单位成本错配。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-24",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "barcode": "4006381333931",
+        "unitsPerPack": "12",
+        "baseUnitCost": "2",
+        "packPrice": "36",
+        "minimumMargin": "30"
+      }
+    ]
+  }
+}

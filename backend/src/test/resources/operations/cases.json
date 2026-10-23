@@ -1,0 +1,65 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "checksumValid": "true",
+      "expectedCheckDigit": "#1",
+      "packProfit": "#12"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "barcode": "4006381333932"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "checksumValid": "false"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "barcode": "123"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "packPrice": "30"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "packProfit": "#6"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "unitsPerPack": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "packPrice": "0"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "marginPct": "N/A"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "minimumMargin": "33.3333"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]
